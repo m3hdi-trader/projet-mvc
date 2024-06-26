@@ -1,9 +1,5 @@
 <?php
 
-include "vendor/autoload.php";
+include "Bootsrap/init.php";
 
-// echo "hi";
-
-// echo $_SERVER['REQUEST_URI'];
-
-new \App\Core\Request();
+var_dump($_ENV);
