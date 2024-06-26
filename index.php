@@ -1,5 +1,6 @@
 <?php
 
-include "Bootsrap/init.php";
+include "Bootsrap/Init.php";
 
-var_dump($_ENV);
+
+echo randomElement([1, 23, 5, 54, 6, 85, 12]);
