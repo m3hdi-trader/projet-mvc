@@ -1,6 +1,8 @@
 <?php
+include "Bootstrap/Init.php";
 
-include "Bootsrap/Init.php";
+use App\Utilities\Lang;
 
+$text = " در سال 1400 علی 2 بچه داار";
 
-echo randomElement([1, 23, 5, 54, 6, 85, 12]);
+echo Lang::persian_numbers($text);
