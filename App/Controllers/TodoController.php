@@ -15,6 +15,7 @@ class TodoController
         ];
         $data = [
             "tasks" => $tasks,
+            'title' => 'لیست تسک ها'
         ];
 
         views('todo.list', $data);
