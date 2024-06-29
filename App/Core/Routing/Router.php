@@ -63,6 +63,7 @@ class Router
         }
 
         #404:uri not exist
+
         if (is_null($this->currentRoute)) {
             $this->dispatch404();
         }
