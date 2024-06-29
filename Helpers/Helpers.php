@@ -10,8 +10,10 @@ function assets_url($rote)
     return site_url("Assets/" . $rote);
 }
 
-function views($path)
+function views($path, $data = [])
 {
+    extract($data);
+
     $path = str_replace('.', '/', $path);
     $viewFullPath = BASEPATH . "Views/$path.php";
     include_once $viewFullPath;
