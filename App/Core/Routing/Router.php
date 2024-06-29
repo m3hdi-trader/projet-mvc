@@ -97,11 +97,11 @@ class Router
             $className = self::BASE_CONTROLLER . $action[0];
             $method = $action[1];
             if (!class_exists($className)) {
-                throw new Exception("class $className not exists!");
+                throw new \Exception("class $className not exists!");
             }
             $controller = new $className;
             if (!method_exists($controller, $method)) {
-                throw new Exception("method $method not exists in class $className!");
+                throw new \Exception("method $method not exists in class $className!");
             }
             $controller->{$method}();
         }
