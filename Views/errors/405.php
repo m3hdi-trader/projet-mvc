@@ -8,8 +8,8 @@
 </head>
 
 <body style="background-color: #f1f1f1;">
-    <h2 style="margin: 100px;text-align: center;">404<br>
-        page Not Found .....</h2>
+    <h2 style="margin: 100px;text-align: center;">405<br>
+        invalid request method .....</h2>
 
 </body>
 

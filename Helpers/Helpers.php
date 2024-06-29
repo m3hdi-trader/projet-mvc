@@ -10,8 +10,9 @@ function assets_url($rote)
     return site_url("Assets/" . $rote);
 }
 
-function randomElement($arr)
+function views($path)
 {
-    shuffle($arr);
-    return array_pop($arr);
+    $path = str_replace('.', '/', $path);
+    $viewFullPath = BASEPATH . "Views/$path.php";
+    include_once $viewFullPath;
 }
