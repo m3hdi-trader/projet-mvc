@@ -8,15 +8,16 @@ use App\Utilities\Url;
 
 include "Bootstrap/Init.php";
 
-// $usreData = [
-//     'id' => rand(5, 1000),
-//     'name' => 'sara'
-// ];
+$usreData = [
+    'name' => 'sara',
+    'email' => 'sara@gmail.com',
+    'password' => '123456',
+];
 
-// $userModel = new User();
-// $userModel->create($usreData);
+$userModel = new User();
+$result = $userModel->create($usreData);
 // $user = $userModel->getAll();
-// var_dump($user);
+var_dump($result);
 
 // $roter = new Router();
 // $roter->run();
