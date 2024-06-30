@@ -28,18 +28,40 @@ class Router
             $middlewareObj = new $middlewareClass;
             $middlewareObj->handle();
         }
-        die();
     }
 
     public function findeRoute(Request $request)
     {
 
         foreach ($this->routes as $route) {
-            if (in_array($request->method(), $route['methoes']) and $request->uri() == $route['uri']) {
+            if (!in_array($request->method(), $route['methoes'])) {
+                return false;
+            }
+
+            if ($this->regexMatched($route)) {
                 return $route;
             }
         }
         return null;
+    }
+
+    public function regexMatched($route)
+    {
+        global $request;
+
+        $patern = "/^" . str_replace(['/', '{', '}'], ['\/', '(?<', '>[-%\w]+)'], $route['uri']) . "$/";
+        $result = preg_match($patern, $this->request->uri(), $matches);
+        if (!$result) {
+            return false;
+        }
+
+        foreach ($matches as $key => $value) {
+            if (!is_int($key)) {
+                $request->addRouteParam($key, $value);
+            }
+        }
+
+        return true;
     }
 
     private function isInvalidRequest(Request $request): bool

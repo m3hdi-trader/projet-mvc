@@ -6,6 +6,10 @@ use App\Middleware\BlockIE;
 
 Route::get('/', 'HomeController@index');
 
+Route::get('/post/{slug}', 'PostController@single');
+Route::get('/post/{slug}/comment/{cid}', 'PostController@comment');
+
+
 Route::get('/todo/list', 'TodoController@list', [BlockFirefox::class, BlockIE::class]);
 
 Route::get('/todo/add', 'TodoController@add');
