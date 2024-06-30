@@ -8,18 +8,20 @@ use App\Utilities\Url;
 
 include "Bootstrap/Init.php";
 
-$usreData = [
-    'id' => rand(5, 1000),
-    'name' => 'sara'
-];
+// $usreData = [
+//     'id' => rand(5, 1000),
+//     'name' => 'sara'
+// ];
 
-$userModel = new User();
+// $userModel = new User();
 // $userModel->create($usreData);
-$user = $userModel->getAll();
-var_dump($user);
+// $user = $userModel->getAll();
+// var_dump($user);
 
 // $roter = new Router();
 // $roter->run();
+
+
 
 
 // $route = '/post/{slug}';
