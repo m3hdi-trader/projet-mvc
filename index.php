@@ -26,7 +26,7 @@ include "Bootstrap/Init.php";
 // $productModel = new Prodouct();
 
 
-// for ($i = 5; $i < 20; $i++) {
+// for ($i = 1; $i < 7; $i++) {
 //     $userModel->create([
 //         'name' => "User$i",
 //         'email' => "mohammad@gmail.com",

@@ -12,8 +12,12 @@ class PostController
         global $request;
 
 
-        $user = new User(1);
-        var_dump($user->email);
+        $user = new User(10);
+        // $result = $user->remove();
+        $user->name = 'qun';
+
+
+        var_dump($user->save()->name);
 
 
         $slug = ($request->getRouteParam('slug'));
