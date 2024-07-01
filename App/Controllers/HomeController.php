@@ -14,8 +14,24 @@ class HomeController
 
     public function index()
     {
-        $allContacts = $this->contactModel->getAll();
-        var_dump($allContacts);
-        echo "hi from homecontroller of phonebook";
+
+
+
+        $data = [
+            'contacts' => $this->contactModel->getAll()
+        ];
+
+        views('home.index', $data);
     }
 }
+
+
+  // $faker = \Faker\Factory::create();
+
+        // for ($i = 0; $i < 1000; $i++) {
+        //     $this->contactModel->create([
+        //         'name' => $faker->name(),
+        //         'mobile' => $faker->phoneNumber(),
+        //         'email' => $faker->email()
+        //     ]);
+        // }
