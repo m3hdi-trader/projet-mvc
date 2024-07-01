@@ -3,29 +3,38 @@
 use App\Core\Routing\Route;
 use App\Core\Routing\Router;
 use App\Core\StupidRouter;
+use App\Models\Prodouct;
 use App\Models\User;
 use App\Utilities\Url;
 
 include "Bootstrap/Init.php";
 
-$usreData = [
-    'name' => 'sara',
-    'email' => 'sara@gmail.com',
-    'password' => '123456',
-];
+// $usreData = [
+//     'name' => 'sara',
+//     'email' => 'sara@gmail.com',
+//     'password' => '123456',
+// ];
 
-$userModel = new User();
-$result = $userModel->create($usreData);
-// $user = $userModel->getAll();
-var_dump($result);
+// $userModel = new User();
+// $result = $userModel->create($usreData);
+// var_dump($result);
 
-// $roter = new Router();
-// $roter->run();
+// $userModel = new User();
+// $result = $userModel->sum('id', ['id[<] ' => '3']);
+// var_dump($result);
+
+// $productModel = new Prodouct();
+
+
+// for ($i = 1; $i < 7; $i++) {
+//     $productModel->create([
+//         'title' => "product$i",
+//         'price' => rand(1, 100) * 1000
+//     ]);
+// }
 
 
 
 
-// $route = '/post/{slug}';
-// $patern = "/^" . str_replace(['/', '{', '}'], ['\/', '(?<', '>[-%\w]+)'], $route) . "$/";
-// nice_dump($route);
-// nice_dump($patern);
+$roter = new Router();
+$roter->run();

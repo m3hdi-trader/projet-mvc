@@ -2,13 +2,18 @@
 
 namespace App\Controllers;
 
+use App\Models\Prodouct;
+
 class PostController
 {
     public function single()
     {
         global $request;
+
+        $authorId = 7;
+        $author = (new Prodouct())->find($authorId);
+        var_dump($author);
         $slug = ($request->getRouteParam('slug'));
-        $cid = ($request->getRouteParam('cid'));
         echo "slug: $slug <br>";
     }
 
