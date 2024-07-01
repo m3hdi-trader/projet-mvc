@@ -9,7 +9,7 @@ use PDOException;
 
 class MySqlBaseModel  extends BaseModel
 {
-    public function __construct()
+    public function __construct($id = null)
     {
         try {
             // $this->connection = new \PDO("mysql:dbname={$_ENV['DB_NAME']};host={$_ENV['DB_HOST']}", $_ENV['DB_USER'], $_ENV['BD_PASS']);
@@ -50,6 +50,9 @@ class MySqlBaseModel  extends BaseModel
         } catch (PDOException $e) {
             echo " connection Failed: " . $e->getMessage();
         }
+        if (!is_null($id)) {
+            return $this->find($id);
+        }
     }
 
     #create(insert)
@@ -64,7 +67,10 @@ class MySqlBaseModel  extends BaseModel
     public function find($id): object
     {
         $record = $this->connection->get($this->table, '*', [$this->primarykey => $id]);
-        return (object)$record;
+        foreach ($record as $col => $value) {
+            $this->attributes[$col] = $value;
+        }
+        return $this;
     }
 
     public function getAll(): array

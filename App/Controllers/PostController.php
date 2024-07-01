@@ -3,6 +3,7 @@
 namespace App\Controllers;
 
 use App\Models\Prodouct;
+use App\Models\User;
 
 class PostController
 {
@@ -10,9 +11,11 @@ class PostController
     {
         global $request;
 
-        $authorId = 7;
-        $author = (new Prodouct())->find($authorId);
-        var_dump($author);
+
+        $user = new User(1);
+        var_dump($user->email);
+
+
         $slug = ($request->getRouteParam('slug'));
         echo "slug: $slug <br>";
     }

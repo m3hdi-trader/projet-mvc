@@ -26,10 +26,11 @@ include "Bootstrap/Init.php";
 // $productModel = new Prodouct();
 
 
-// for ($i = 1; $i < 7; $i++) {
-//     $productModel->create([
-//         'title' => "product$i",
-//         'price' => rand(1, 100) * 1000
+// for ($i = 5; $i < 20; $i++) {
+//     $userModel->create([
+//         'name' => "User$i",
+//         'email' => "mohammad@gmail.com",
+//         'password' => "123456"
 //     ]);
 // }
 
