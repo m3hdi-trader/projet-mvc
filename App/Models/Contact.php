@@ -8,4 +8,5 @@ use App\Models\Contracts\MySqlBaseModel;
 class Contact extends MySqlBaseModel
 {
     protected $table = 'contacts';
+    protected $pageSize = 20;
 }
