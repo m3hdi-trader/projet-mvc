@@ -15,7 +15,7 @@ class HomeController
     public function index()
     {
         global $request;
-        $where = [];
+        $where = ['ORDER' => ['created_at' => "DESC"]];
         $searchKeyWord = $request->input('s');
 
         if (!is_null($searchKeyWord)) {

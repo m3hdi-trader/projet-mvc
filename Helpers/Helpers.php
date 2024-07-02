@@ -1,6 +1,6 @@
 <?php
 
-function site_url($rote)
+function site_url($rote = '')
 {
     return $_ENV['HOST'] . $rote;
 }

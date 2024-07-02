@@ -4,6 +4,7 @@ use App\Core\Routing\Route;
 
 
 Route::get('/', 'HomeController@index');
+Route::post('/contact/add', 'ContactController@add');
 // Route::get('/post/{slug}', 'PostController@single');
 // Route::get('/post/{slug}/comment/{cid}', 'PostController@comment');
 // Route::get('/todo/list', 'TodoController@list', [BlockFirefox::class, BlockIE::class]);
