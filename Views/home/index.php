@@ -70,7 +70,7 @@
                                 <td class=""><?= $contact['name'] ?></td>
                                 <td class=""><?= $contact['mobile'] ?></td>
                                 <td class=""><?= $contact['email'] ?></td>
-                                <td class="col-1">...</td>
+                                <td class="col-1"><a href="<?= site_url("contact/delete/{$contact['id']}") ?>"><img src="<?= assets_url("images/delete-icons.png") ?>"></a></td>
                             </tr>
                         <?php endforeach ?>
 
