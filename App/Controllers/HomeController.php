@@ -14,11 +14,22 @@ class HomeController
 
     public function index()
     {
+        global $request;
+        $where = [];
+        $searchKeyWord = $request->input('s');
 
+        if (!is_null($searchKeyWord)) {
+            $where['OR'] = [
 
-
+                "name[~]" => $searchKeyWord,
+                "mobile[~]" => $searchKeyWord,
+                "email[~]" => $searchKeyWord,
+            ];
+        }
+        $contacts = $this->contactModel->get('*', $where);
         $data = [
-            'contacts' => $this->contactModel->getAll()
+            'contacts' => $contacts,
+            'searchKeyWord' => $searchKeyWord,
         ];
 
         views('home.index', $data);

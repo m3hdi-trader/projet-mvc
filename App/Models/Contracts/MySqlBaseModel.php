@@ -101,7 +101,7 @@ class MySqlBaseModel  extends BaseModel
     {
         $page = (isset($_GET['page']) && is_numeric($_GET['page'])) ?  $_GET['page'] : 1;
 
-        $start = ($page  - 1) * $this->pageSize;
+        $start = ($page - 1) * $this->pageSize;
         $where['LIMIT'] = [$start, $this->pageSize];
 
 

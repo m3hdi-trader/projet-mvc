@@ -13,6 +13,11 @@ class Request
 
     public function __construct()
     {
+
+        foreach ($_REQUEST as $key => $value) {
+            $_REQUEST[$key] = xssClean($value);
+        }
+
         $this->params = $_REQUEST;
         $this->agent = $_SERVER['HTTP_USER_AGENT'];
         $this->method =  strtolower($_SERVER['REQUEST_METHOD']);

@@ -40,3 +40,8 @@ function nice_dd($var)
     nice_dump($var);
     die();
 }
+
+function xssClean($str)
+{
+    return filter_var(htmlspecialchars($str), FILTER_SANITIZE_STRING);
+}
